@@ -47,7 +47,7 @@ Word.propTypes = {
 
 
 const WordSphere = () => {
-  const radius = 5;
+  const radius = 4;
   const groupRef = useRef();
   
   const textRefs = useRef([]);
