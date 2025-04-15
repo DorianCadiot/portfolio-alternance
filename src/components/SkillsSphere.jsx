@@ -46,28 +46,35 @@ Word.propTypes = {
 };
 
 const WordSphere = () => {
-  const radius = 5;
-  const wordPositions = skills.map((skill, i) => {
-    const phi = Math.acos(-1 + (2 * i) / skills.length);
-    const theta = Math.sqrt(skills.length * Math.PI) * phi;
-    const position = new THREE.Vector3(
-      radius * Math.sin(phi) * Math.cos(theta),
-      radius * Math.sin(phi) * Math.sin(theta),
-      radius * Math.cos(phi)
-    );
-    return { position, skill };
-  });
+  // Vérification des données
+  if (!skills || skills.length === 0) {
+    return <Text position={[0, 0, 0]}>Aucune compétence chargée</Text>;
+  }
 
+  const radius = 5;
   return (
     <group>
-      {wordPositions.map(({ skill, position }, index) => (
-        <Word key={index} position={position}>
-          {skill}
-        </Word>
-      ))}
+      {skills.map((skill, i) => {
+        const phi = Math.acos(-1 + (2 * i) / skills.length);
+        const theta = Math.sqrt(skills.length * Math.PI) * phi;
+        return (
+          <Word 
+            key={`${skill}-${i}`}
+            position={new THREE.Vector3(
+              radius * Math.sin(phi) * Math.cos(theta),
+              radius * Math.sin(phi) * Math.sin(theta),
+              radius * Math.cos(phi)
+            )}
+          >
+            {skill}
+          </Word>
+        );
+      })}
     </group>
   );
 };
+
+
 
 const SkillsSphere = () => {
   const [size, setSize] = useState(window.innerWidth);
