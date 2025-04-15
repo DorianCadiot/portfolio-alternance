@@ -57,23 +57,23 @@ const WordSphere = () => {
 
   // Vérification des NaN
   const wordPositions = skills.map((skill, i) => {
-    const phi = Math.acos(-1 + (2 * i) / skills.length);
-    const theta = Math.sqrt(skills.length * Math.PI) * phi;
-    
-    const x = radius * Math.sin(phi) * Math.cos(theta);
-    const y = radius * Math.sin(phi) * Math.sin(theta);
-    const z = radius * Math.cos(phi);
+  // Protection contre division par zéro
+  const safeLength = Math.max(1, skills.length);
+  const phi = Math.acos(-1 + (2 * i) / safeLength);
+  const theta = Math.sqrt(safeLength * Math.PI) * phi;
+  
+  // Ajout de limites numériques
+  const clamp = (num) => Math.max(-100, Math.min(100, num));
+  
+  const x = clamp(radius * Math.sin(phi) * Math.cos(theta));
+  const y = clamp(radius * Math.sin(phi) * Math.sin(theta));
+  const z = clamp(radius * Math.cos(phi));
 
-    if (isNaN(x) || isNaN(y) || isNaN(z)) {
-      console.error(`Position invalide pour ${skill}`, {x, y, z});
-      return { position: new THREE.Vector3(0, 0, 0), skill };
-    }
-
-    return { 
-      position: new THREE.Vector3(x, y, z),
-      skill 
-    };
-  });
+  return { 
+    position: new THREE.Vector3(x, y, z),
+    skill 
+  };
+});
 
   return (
     <group>
