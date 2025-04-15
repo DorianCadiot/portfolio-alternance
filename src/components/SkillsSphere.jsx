@@ -81,7 +81,7 @@ const WordSphere = () => {
             key={`${skill}-${i}`}
             ref={el => textRefs.current[i] = el}
             position={position}
-            fontSize={0.4} // Taille réduite
+            fontSize={0.55} // Taille réduite
             color="#ffffff"
             anchorX="center"
             anchorY="middle"
