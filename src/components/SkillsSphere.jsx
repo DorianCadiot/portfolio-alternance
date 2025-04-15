@@ -7,7 +7,6 @@ import PropTypes from "prop-types";
 import { skills } from "../constants/data";
 import Loader from "./Loader";
 
-
 const AnimatedText = animated(Text); // Make Text component animatable
 
 const Word = ({ children, position }) => {
@@ -46,9 +45,6 @@ Word.propTypes = {
   position: PropTypes.object.isRequired,
 };
 
-import { useRef, useEffect } from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
-import * as THREE from 'three';
 
 const ParticlesSphere = ({ skills }) => {
   const particlesRef = useRef();
