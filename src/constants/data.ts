@@ -213,7 +213,7 @@ export const socialLinks = [
 
 export const skills = [
   "C++",
-  "Programmation orientée objet",
+  "POO",
   "JavaScript",
   "TypeScript",
   "C#",
