@@ -213,7 +213,7 @@ export const socialLinks = [
 
 export const skills = [
   "C++",
-  "Java",
+  "Programmation orientée objet",
   "JavaScript",
   "TypeScript",
   "C#",
@@ -222,7 +222,7 @@ export const skills = [
   "VScode",
   "Oracle",
   "SQL",
-  "Maven",
+  "Programmation Fonctionnelle",
   "Git",
   "IntelliJ",
   "OCaml",
@@ -233,7 +233,7 @@ export const skills = [
   "2D",
   "GitHub",
   "Analyseurs syntaxiques",
-  "Programmation orientée objet",
-  "Programmation Fonctionnelle",
+  "Java",
+  "Maven",
   "Algorithmes",
 ];
