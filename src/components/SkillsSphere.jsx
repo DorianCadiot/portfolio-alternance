@@ -46,7 +46,7 @@ Word.propTypes = {
 };
 
 
-const ParticlesSphere = ({ skills }) => {
+const WordSphere = ({ skills }) => {
   const particlesRef = useRef();
   const radius = 5;
   
@@ -98,9 +98,11 @@ const ParticlesSphere = ({ skills }) => {
 const SkillsScene = () => (
   <Canvas camera={{ position: [0, 0, 10], fov: 60 }}>
     <ambientLight intensity={0.5} />
-    <ParticlesSphere skills={skills} />
+    <WordSphere skills={skills} />
   </Canvas>
 );
+
+
 const SkillsSphere = () => {
   const [size, setSize] = useState(window.innerWidth);
 
