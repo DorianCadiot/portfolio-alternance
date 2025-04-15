@@ -106,7 +106,7 @@ const WordSphere = () => {
       })}
     </group>
   );
-});
+})};
 
 const SkillsSphere = () => {
   const [size, setSize] = useState(window.innerWidth);
