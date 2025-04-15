@@ -50,7 +50,7 @@ const WordSphere = () => {
   const radius = 5;
   const groupRef = useRef();
   
-  const textRef = useRef([]);
+  const textRefs = useRef([]);
 
   useFrame(({ camera }) => {
   textRefs.current.forEach(text => {
