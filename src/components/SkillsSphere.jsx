@@ -46,62 +46,41 @@ Word.propTypes = {
 };
 
 
-const WordSphere = ({ skills }) => {
-  const particlesRef = useRef();
-  const radius = 5;
-  
-  // Création de la géométrie des particules
-  useEffect(() => {
-    if (!skills?.length) return;
+const WordSphere = () => {
+  const radius = 7;
+  const groupRef = useRef();
 
-    const geometry = new THREE.BufferGeometry();
-    const positions = new Float32Array(skills.length * 3);
-    const sizes = new Float32Array(skills.length);
-
-    // Répartition aléatoire mais sphérique
-    for (let i = 0; i < skills.length; i++) {
-      const theta = Math.random() * Math.PI * 2;
-      const phi = Math.acos(2 * Math.random() - 1);
-      
-      positions[i * 3] = radius * Math.sin(phi) * Math.cos(theta);
-      positions[i * 3 + 1] = radius * Math.sin(phi) * Math.sin(theta);
-      positions[i * 3 + 2] = radius * Math.cos(phi);
-      
-      sizes[i] = 0.5;
-    }
-
-    geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-    geometry.setAttribute('size', new THREE.BufferAttribute(sizes, 1));
-
-    particlesRef.current.geometry = geometry;
-  }, [skills]);
-
-  useFrame(({ clock }) => {
-    if (particlesRef.current) {
-      particlesRef.current.rotation.y = clock.getElapsedTime() * 0.1;
-    }
+  useFrame(() => {
+    groupRef.current.rotation.y += 0.005; // Rotation douce
   });
 
   return (
-    <points ref={particlesRef}>
-      <pointsMaterial 
-        color="white" 
-        size={0.15} 
-        sizeAttenuation={true}
-        transparent
-        alphaTest={0.01}
-      />
-    </points>
+    <group ref={groupRef}>
+      {skills.map((skill, i) => {
+        // Formule 100% stable
+        const phi = (i / skills.length) * Math.PI; // [0, π]
+        const theta = (i / skills.length) * Math.PI * 2; // [0, 2π]
+        
+        const x = radius * Math.sin(phi) * Math.cos(theta);
+        const y = radius * Math.sin(phi) * Math.sin(theta);
+        const z = radius * Math.cos(phi);
+
+        return (
+          <Text
+            key={`${skill}-${i}`}
+            position={[x, y, z]}
+            fontSize={0.4}
+            color="white"
+            anchorX="center"
+            anchorY="middle"
+          >
+            {skill}
+          </Text>
+        );
+      })}
+    </group>
   );
 };
-
-const SkillsScene = () => (
-  <Canvas camera={{ position: [0, 0, 10], fov: 60 }}>
-    <ambientLight intensity={0.5} />
-    <WordSphere skills={skills} />
-  </Canvas>
-);
-
 
 const SkillsSphere = () => {
   const [size, setSize] = useState(window.innerWidth);
