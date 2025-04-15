@@ -47,7 +47,7 @@ Word.propTypes = {
 
 
 const WordSphere = () => {
-  const radius = 4.5; // Taille réduite pour meilleure densité
+  const radius = 5; // Taille réduite pour meilleure densité
   const groupRef = useRef();
   const textRefs = useRef([]);
 
