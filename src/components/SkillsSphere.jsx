@@ -48,30 +48,40 @@ Word.propTypes = {
 };
 
 const WordSphere = () => {
-  // Vérification des données
+  const radius = 5;
+  
+  // Protection contre les données vides
   if (!skills || skills.length === 0) {
-    return <Text position={[0, 0, 0]}>Aucune compétence chargée</Text>;
+    return null;
   }
 
-  const radius = 5;
+  // Vérification des NaN
+  const wordPositions = skills.map((skill, i) => {
+    const phi = Math.acos(-1 + (2 * i) / skills.length);
+    const theta = Math.sqrt(skills.length * Math.PI) * phi;
+    
+    const x = radius * Math.sin(phi) * Math.cos(theta);
+    const y = radius * Math.sin(phi) * Math.sin(theta);
+    const z = radius * Math.cos(phi);
+
+    if (isNaN(x) || isNaN(y) || isNaN(z)) {
+      console.error(`Position invalide pour ${skill}`, {x, y, z});
+      return { position: new THREE.Vector3(0, 0, 0), skill };
+    }
+
+    return { 
+      position: new THREE.Vector3(x, y, z),
+      skill 
+    };
+  });
+
   return (
     <group>
-      {skills.map((skill, i) => {
-        const phi = Math.acos(-1 + (2 * i) / skills.length);
-        const theta = Math.sqrt(skills.length * Math.PI) * phi;
-        return (
-          <Word 
-            key={`${skill}-${i}`}
-            position={new THREE.Vector3(
-              radius * Math.sin(phi) * Math.cos(theta),
-              radius * Math.sin(phi) * Math.sin(theta),
-              radius * Math.cos(phi)
-            )}
-          >
-            {skill}
-          </Word>
-        );
-      })}
+      {wordPositions.map(({ skill, position }, index) => (
+        <Word key={`${skill}-${index}`} position={position}>
+          {skill}
+        </Word>
+      ))}
     </group>
   );
 };
