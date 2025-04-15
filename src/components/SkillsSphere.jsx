@@ -87,7 +87,7 @@ const WordSphere = () => {
             anchorY="middle"
             lineHeight={1}
             letterSpacing={0.02}
-            maxWidth={2}
+            maxWidth={50}
           >
             {skill}
           </Text>
