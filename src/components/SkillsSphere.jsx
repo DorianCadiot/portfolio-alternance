@@ -49,10 +49,16 @@ Word.propTypes = {
 const WordSphere = () => {
   const radius = 5;
   const groupRef = useRef();
+  
+  const textRef = useRef([]);
 
-  useFrame(() => {
-    
+  useFrame(({ camera }) => {
+  textRefs.current.forEach(text => {
+    if (text) {
+      text.quaternion.copy(camera.quaternion);  // Aligne chaque texte avec la caméra
+    }
   });
+});
 
   return (
     <group ref={groupRef}>
@@ -69,6 +75,7 @@ const WordSphere = () => {
         return (
           <Text
             key={`${skill}-${i}`}
+            ref={el => textRefs.current[i] = el}
             position={[x, y, z]}
             fontSize={0.35}
             color="#ffffff"
