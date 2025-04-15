@@ -53,23 +53,24 @@ Word.propTypes = {
 };
 
 const WordSphere = () => {
-  const radius = 5;
+  const radius = 8; // Augmenté pour mieux voir les éléments
   
-  // Nouvel algorithme adaptatif
   const wordPositions = skills.map((skill, i) => {
-    // Nombre minimal d'items pour une répartition stable
-    const minItems = 3; 
-    const itemCount = Math.max(minItems, skills.length);
-    
-    // Calcul robuste même avec peu d'éléments
-    const phi = Math.acos(-1 + (2 * (i + 0.5) / itemCount);
+    // Version totalement sécurisée
+    const itemCount = Math.max(3, skills.length); // Minimum 3 pour une bonne répartition
+    const phi = Math.acos(-1 + (2 * i + 1) / itemCount); // Formule corrigée
     const theta = Math.sqrt(itemCount * Math.PI) * phi;
     
+    // Validation des valeurs
+    const x = radius * Math.sin(phi) * Math.cos(theta);
+    const y = radius * Math.sin(phi) * Math.sin(theta);
+    const z = radius * Math.cos(phi);
+
     return {
       position: new THREE.Vector3(
-        radius * Math.sin(phi) * Math.cos(theta),
-        radius * Math.sin(phi) * Math.sin(theta),
-        radius * Math.cos(phi)
+        isNaN(x) ? 0 : x, // Fallback si NaN
+        isNaN(y) ? 0 : y,
+        isNaN(z) ? 0 : z
       ),
       skill
     };
@@ -78,14 +79,16 @@ const WordSphere = () => {
   return (
     <group>
       {wordPositions.map(({ skill, position }, index) => (
-        <Word key={`${index}-${skill}`} position={position}>
+        <Word 
+          key={`${skill}-${index}`}
+          position={position}
+        >
           {skill}
         </Word>
       ))}
     </group>
   );
 };
-
 
 
 const SkillsSphere = () => {
