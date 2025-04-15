@@ -47,7 +47,7 @@ Word.propTypes = {
 
 
 const WordSphere = () => {
-  const radius = 3.5; // Taille réduite pour meilleure densité
+  const radius = 4.5; // Taille réduite pour meilleure densité
   const groupRef = useRef();
   const textRefs = useRef([]);
 
@@ -81,7 +81,7 @@ const WordSphere = () => {
             key={`${skill}-${i}`}
             ref={el => textRefs.current[i] = el}
             position={position}
-            fontSize={0.25} // Taille réduite
+            fontSize={0.4} // Taille réduite
             color="#ffffff"
             anchorX="center"
             anchorY="middle"
