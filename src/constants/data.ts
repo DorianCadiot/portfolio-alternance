@@ -131,7 +131,7 @@ export const myProjects = [
   },
   {
     title: "Projet universitaire autour de la programmation fonctionnelle",
-    desc: "Programmation d'un analyseur syntaxique en OCaml d'un langage "SimpleML", vérifiant les types des expressions et évaluant leurs valeurs.",
+    desc: "Programmation d'un analyseur syntaxique en OCaml d'un langage \"SimpleML\", vérifiant les types des expressions et évaluant leurs valeurs.",
     subdesc:
       "Ce projet m'as permis de mieux comprendre copmment fonctionne un analyseur syntaxique pour les différents languages.",
     href: "https://gitlab.univ-nantes.fr/E224021B/projet-programation-fonctionnelle",
