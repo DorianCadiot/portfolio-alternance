@@ -64,13 +64,26 @@ const WordSphere = () => {
     <group ref={groupRef}>
       {skills.map((skill, i) => {
         // Formule corrigée pour une vraie sphère
-        const u = Math.random(); // Aléatoire pour éviter les alignements
-        const theta = 2 * Math.PI * (i / skills.length);
-        const phi = Math.acos(2 * u - 1);
+        //const u = Math.random(); // Aléatoire pour éviter les alignements
+        //const theta = 2 * Math.PI * (i / skills.length);
+        //const phi = Math.acos(2 * u - 1);
         
-        const x = radius * Math.sin(phi) * Math.cos(theta);
-        const y = radius * Math.sin(phi) * Math.sin(theta);
-        const z = radius * Math.cos(phi);
+        //const x = radius * Math.sin(phi) * Math.cos(theta);
+        //const y = radius * Math.sin(phi) * Math.sin(theta);
+        //const z = radius * Math.cos(phi);
+
+      // Fonction de répartition optimale
+      const getSpherePosition = (index, total) => {
+        const goldenRatio = (1 + Math.sqrt(5)) / 2;
+        const theta = 2 * Math.PI * index / goldenRatio;
+        const phi = Math.acos(1 - 2 * (index + 0.5) / total);
+    
+        return [
+          radius * Math.cos(theta) * Math.sin(phi),
+          radius * Math.sin(theta) * Math.sin(phi),
+          radius * Math.cos(phi)
+        ];
+      };
 
         return (
           <Text
