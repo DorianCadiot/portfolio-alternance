@@ -50,35 +50,33 @@ Word.propTypes = {
 const WordSphere = () => {
   const radius = 5;
   
-  // Protection contre les données vides
-  if (!skills || skills.length === 0) {
+  // Protection renforcée
+  if (!skills || typeof skills !== 'object' || !Array.isArray(skills)) {
+    console.error("Skills doit être un tableau. Reçu:", typeof skills, skills);
     return null;
   }
 
-  // Vérification des NaN
-  const wordPositions = skills.map((skill, i) => {
-  // Protection contre division par zéro
-  const safeLength = Math.max(1, skills.length);
-  const phi = Math.acos(-1 + (2 * i) / safeLength);
-  const theta = Math.sqrt(safeLength * Math.PI) * phi;
+  // Conversion forcée au cas où
+  const safeSkills = Array.isArray(skills) ? skills : Object.values(skills);
   
-  // Ajout de limites numériques
-  const clamp = (num) => Math.max(-100, Math.min(100, num));
-  
-  const x = clamp(radius * Math.sin(phi) * Math.cos(theta));
-  const y = clamp(radius * Math.sin(phi) * Math.sin(theta));
-  const z = clamp(radius * Math.cos(phi));
-
-  return { 
-    position: new THREE.Vector3(x, y, z),
-    skill 
-  };
-});
+  const wordPositions = safeSkills.map((skill, i) => {
+    const phi = Math.acos(-1 + (2 * i) / safeSkills.length);
+    const theta = Math.sqrt(safeSkills.length * Math.PI) * phi;
+    
+    return {
+      position: new THREE.Vector3(
+        radius * Math.sin(phi) * Math.cos(theta),
+        radius * Math.sin(phi) * Math.sin(theta),
+        radius * Math.cos(phi)
+      ),
+      skill: String(skill) // Force la conversion en string
+    };
+  });
 
   return (
     <group>
       {wordPositions.map(({ skill, position }, index) => (
-        <Word key={`${skill}-${index}`} position={position}>
+        <Word key={`${index}-${skill}`} position={position}>
           {skill}
         </Word>
       ))}
