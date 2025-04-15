@@ -7,6 +7,8 @@ import PropTypes from "prop-types";
 import { skills } from "../constants/data";
 import Loader from "./Loader";
 
+console.log("Skills chargées:", skills); // Vérifiez la console
+
 const AnimatedText = animated(Text); // Make Text component animatable
 
 const Word = ({ children, position }) => {
