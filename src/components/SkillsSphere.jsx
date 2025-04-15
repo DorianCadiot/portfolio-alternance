@@ -86,11 +86,16 @@ const WordSphere = () => {
       };
 
         return (
+    <group ref={groupRef}>
+      {skills.map((skill, i) => {
+        const position = getSpherePosition(i, skills.length);
+
+        return (
           <Text
             key={`${skill}-${i}`}
             ref={el => textRefs.current[i] = el}
-            position={[x, y, z]}
-            fontSize={0.35}
+            position={position}
+            fontSize={0.35} // Taille réduite
             color="#ffffff"
             anchorX="center"
             anchorY="middle"
