@@ -46,7 +46,7 @@ Word.propTypes = {
 };
 
 
-const WordSphere = () => {
+/*const WordSphere = () => {
   const radius = 5; // Taille réduite pour meilleure densité
   const groupRef = useRef();
   const textRefs = useRef([]);
@@ -93,6 +93,30 @@ const WordSphere = () => {
           </Text>
         );
       })}
+    </group>
+  );
+};*/
+
+const WordSphere = () => {
+  const radius = 5;
+  const wordPositions = skills.map((skill, i) => {
+    const phi = Math.acos(-1 + (2 * i) / skills.length);
+    const theta = Math.sqrt(skills.length * Math.PI) * phi;
+    const position = new THREE.Vector3(
+      radius * Math.sin(phi) * Math.cos(theta),
+      radius * Math.sin(phi) * Math.sin(theta),
+      radius * Math.cos(phi)
+    );
+    return { position, skill };
+  });
+
+  return (
+    <group>
+      {wordPositions.map(({ skill, position }, index) => (
+        <Word key={index} position={position}>
+          {skill}
+        </Word>
+      ))}
     </group>
   );
 };
