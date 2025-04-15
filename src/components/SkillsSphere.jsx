@@ -47,39 +47,53 @@ Word.propTypes = {
 };
 
 const WordSphere = () => {
-  const radius = 6;
-  const validSkills = skills.filter(skill => typeof skill === 'string' && skill.trim().length > 0);
+  const radius = 8; // Taille de la sphère
 
-  const wordPositions = validSkills.map((skill, i) => {
-    // Algorithme optimisé pour tous types de données
-    const points = validSkills.length;
-    const angle = (i * 2 * Math.PI) / points;
-    const spiral = i / points;
+  // 1. Protection données
+  if (!skills?.length) return null;
+
+  // 2. Calcul des positions sphériques
+  const wordPositions = skills.map((skill, i) => {
+    // Algorithme Fibonacci Sphere (meilleure répartition)
+    const phi = Math.acos(-1 + (2 * i) / skills.length);
+    const theta = Math.sqrt(skills.length * Math.PI) * phi;
     
     return {
       position: new THREE.Vector3(
-        radius * Math.cos(angle) * spiral,
-        radius * Math.sin(angle) * spiral,
-        radius * (1 - 2 * spiral)
+        radius * Math.sin(phi) * Math.cos(theta),
+        radius * Math.sin(phi) * Math.sin(theta),
+        radius * Math.cos(phi)
       ),
       skill
     };
   });
 
+  // 3. Rendu 3D
   return (
-    <group position={[0, 0, 0]}>
-      {wordPositions.map(({skill, position}, i) => (
-        <Word 
-          key={`${skill.replace(/\s+/g, '_')}_${i}`}
-          position={position}
-        >
-          {skill}
-        </Word>
-      ))}
-    </group>
+    <Canvas camera={{ position: [0, 0, 12], fov: 60 }}>
+      <ambientLight intensity={0.5} />
+      <pointLight position={[10, 10, 10]} />
+      
+      <group rotation={[0, 0, 0]}>
+        {wordPositions.map(({skill, position}, i) => (
+          <Text
+            key={`skill-${i}`}
+            position={position}
+            fontSize={0.4}
+            color="#ffffff"
+            anchorX="center"
+            anchorY="middle"
+            font="/fonts/YourFont.ttf" // Optionnel
+          >
+            {skill}
+          </Text>
+        ))}
+      </group>
+
+      <OrbitControls enableZoom={true} autoRotate={true} autoRotateSpeed={1} />
+    </Canvas>
   );
 };
-
 
 const SkillsSphere = () => {
   const [size, setSize] = useState(window.innerWidth);
