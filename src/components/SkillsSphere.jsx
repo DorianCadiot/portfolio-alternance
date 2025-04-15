@@ -7,12 +7,6 @@ import PropTypes from "prop-types";
 import { skills } from "../constants/data";
 import Loader from "./Loader";
 
-console.log("=== DEBUG ===", {
-  skills, 
-  isArray: Array.isArray(skills),
-  firstItem: skills?.[0],
-  importedFrom: require.resolve('../constants/data')
-});
 
 const AnimatedText = animated(Text); // Make Text component animatable
 
