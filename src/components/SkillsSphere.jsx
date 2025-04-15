@@ -46,55 +46,65 @@ Word.propTypes = {
   position: PropTypes.object.isRequired,
 };
 
-const WordSphere = () => {
-  const radius = 8; // Taille de la sphère
+import { useRef, useEffect } from 'react';
+import { Canvas, useFrame } from '@react-three/fiber';
+import * as THREE from 'three';
 
-  // 1. Protection données
-  if (!skills?.length) return null;
+const ParticlesSphere = ({ skills }) => {
+  const particlesRef = useRef();
+  const radius = 5;
+  
+  // Création de la géométrie des particules
+  useEffect(() => {
+    if (!skills?.length) return;
 
-  // 2. Calcul des positions sphériques
-  const wordPositions = skills.map((skill, i) => {
-    // Algorithme Fibonacci Sphere (meilleure répartition)
-    const phi = Math.acos(-1 + (2 * i) / skills.length);
-    const theta = Math.sqrt(skills.length * Math.PI) * phi;
-    
-    return {
-      position: new THREE.Vector3(
-        radius * Math.sin(phi) * Math.cos(theta),
-        radius * Math.sin(phi) * Math.sin(theta),
-        radius * Math.cos(phi)
-      ),
-      skill
-    };
+    const geometry = new THREE.BufferGeometry();
+    const positions = new Float32Array(skills.length * 3);
+    const sizes = new Float32Array(skills.length);
+
+    // Répartition aléatoire mais sphérique
+    for (let i = 0; i < skills.length; i++) {
+      const theta = Math.random() * Math.PI * 2;
+      const phi = Math.acos(2 * Math.random() - 1);
+      
+      positions[i * 3] = radius * Math.sin(phi) * Math.cos(theta);
+      positions[i * 3 + 1] = radius * Math.sin(phi) * Math.sin(theta);
+      positions[i * 3 + 2] = radius * Math.cos(phi);
+      
+      sizes[i] = 0.5;
+    }
+
+    geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+    geometry.setAttribute('size', new THREE.BufferAttribute(sizes, 1));
+
+    particlesRef.current.geometry = geometry;
+  }, [skills]);
+
+  useFrame(({ clock }) => {
+    if (particlesRef.current) {
+      particlesRef.current.rotation.y = clock.getElapsedTime() * 0.1;
+    }
   });
 
-  // 3. Rendu 3D
   return (
-    <Canvas camera={{ position: [0, 0, 12], fov: 60 }}>
-      <ambientLight intensity={0.5} />
-      <pointLight position={[10, 10, 10]} />
-      
-      <group rotation={[0, 0, 0]}>
-        {wordPositions.map(({skill, position}, i) => (
-          <Text
-            key={`skill-${i}`}
-            position={position}
-            fontSize={0.4}
-            color="#ffffff"
-            anchorX="center"
-            anchorY="middle"
-            font="/fonts/YourFont.ttf" // Optionnel
-          >
-            {skill}
-          </Text>
-        ))}
-      </group>
-
-      <OrbitControls enableZoom={true} autoRotate={true} autoRotateSpeed={1} />
-    </Canvas>
+    <points ref={particlesRef}>
+      <pointsMaterial 
+        color="white" 
+        size={0.15} 
+        sizeAttenuation={true}
+        transparent
+        alphaTest={0.01}
+      />
+    </points>
   );
 };
 
+const SkillsScene = () => (
+  <Canvas camera={{ position: [0, 0, 10], fov: 60 }}>
+    <ambientLight intensity={0.5} />
+    <ParticlesSphere skills={skills} />
+  </Canvas>
+);
 const SkillsSphere = () => {
   const [size, setSize] = useState(window.innerWidth);
 
