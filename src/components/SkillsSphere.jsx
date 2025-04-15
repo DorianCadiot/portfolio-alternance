@@ -51,15 +51,16 @@ const WordSphere = () => {
   const groupRef = useRef();
 
   useFrame(() => {
-    groupRef.current.rotation.y += 0.005; // Rotation douce
+    groupRef.current.rotation.y += 0.005;
   });
 
   return (
     <group ref={groupRef}>
       {skills.map((skill, i) => {
-        // Formule 100% stable
-        const phi = (i / skills.length) * Math.PI; // [0, π]
-        const theta = (i / skills.length) * Math.PI * 2; // [0, 2π]
+        // Formule corrigée pour une vraie sphère
+        const u = Math.random(); // Aléatoire pour éviter les alignements
+        const theta = 2 * Math.PI * (i / skills.length);
+        const phi = Math.acos(2 * u - 1);
         
         const x = radius * Math.sin(phi) * Math.cos(theta);
         const y = radius * Math.sin(phi) * Math.sin(theta);
@@ -69,8 +70,8 @@ const WordSphere = () => {
           <Text
             key={`${skill}-${i}`}
             position={[x, y, z]}
-            fontSize={0.4}
-            color="white"
+            fontSize={0.35}
+            color="#ffffff"
             anchorX="center"
             anchorY="middle"
           >
