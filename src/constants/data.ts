@@ -1,22 +1,22 @@
 export const navLinks = [
   {
     id: 1,
-    name: "Home",
+    name: "À propos",
     href: "#home",
   },
   {
     id: 2,
-    name: "Experience",
+    name: "Expérience",
     href: "#experience",
   },
   {
     id: 3,
-    name: "Skills",
+    name: "Compétences",
     href: "#skills",
   },
   {
     id: 4,
-    name: "Projects",
+    name: "Projets",
     href: "#projects",
   },
   {
@@ -28,11 +28,11 @@ export const navLinks = [
 
 export const myProjects = [
   {
-    title: "ThreeRun - 3D Obstacle Course Game",
-    desc: "A 3D obstacle course game built with React Three Fiber, featuring a third-person character controller with movement and animations.",
+    title: "Développement d'un plateformer 2D via Unity
+    desc: "Projet personnel en binôme avec un autre étudiant informatique, découverte de Unity via une super série tuto, sur Youtube.",
     subdesc:
-      "Currently in early development, with plans for level completion, multiplayer, and collectibles.",
-    href: "https://a-coderr.github.io/obstacle_course_r3f/",
+      "Cela m'as permis d'apprendre également les bases du C#, ainsi que le fonctionnement d'un moteur de jeu.",
+    href: "https://doriancadiot.github.io/Jeu-Unity/",
     source: "https://github.com/A-coderr/obstacle_course_r3f",
     logo: "projects/ThreeRun_Main_Screen.png",
     logoStyle: {
@@ -79,11 +79,11 @@ export const myProjects = [
     ],
   },
   {
-    title: "Anzhelika Kostyuk - Portfolio Website",
-    desc: "My Portfolio Website, a showcase of my skills, projects, and experience as a software developer.",
+    title: "Projet universitaire autour de la programmation orientée objet",
+    desc: "Développement de A à Z d'un petit jeu basique avec interaction dans la console.",
     subdesc:
-      "Built with modern web technologies, this portfolio highlights interactive 3D elements, smooth animations, and a responsive design for an engaging user experience.",
-    href: "https://github.com/A-coderr/three_portfolio",
+      " Lors de ce projet à 4, nous avons choisi de développer un jeu roguelike, dans lequel le joueur avançait de salle en salle dans un donjon. Le joueur pouvait progresser dans le donjon pour obtenir des récompenses générées aléatoirement à la fin de chaque salle, lui permettant d'améliorer son équipement afin d'aller plus loin.",
+    href: "https://gitlab.univ-nantes.fr/E224021B/POO.23.24.20",
     source: "https://github.com/A-coderr/three_portfolio",
     logo: "projects/Portfolio_Main.png",
     logoStyle: {
@@ -130,11 +130,11 @@ export const myProjects = [
     ],
   },
   {
-    title: "Karate Galaxy - Karate Website",
-    desc: "A Karate Website, developed as part of a college assignment.",
+    title: "Projet universitaire autour de la programmation fonctionnelle",
+    desc: "Programmation d'un analyseur syntaxique en OCaml d'un langage "SimpleML", vérifiant les types des expressions et évaluant leurs valeurs.",
     subdesc:
-      "Designed with a clean and responsive layout, it ensures a smooth user experience across different devices.",
-    href: "https://a-coderr.github.io/karate-galaxy/",
+      "Ce projet m'as permis de mieux comprendre copmment fonctionne un analyseur syntaxique pour les différents languages.",
+    href: "https://gitlab.univ-nantes.fr/E224021B/projet-programation-fonctionnelle",
     source: "https://github.com/A-coderr/Karate_HTML_CSS",
     logo: "projects/KarateGalaxy_Main.png",
     logoStyle: {
@@ -205,42 +205,35 @@ export const workExperiences = [
 ];
 
 export const socialLinks = [
-  { url: "https://www.instagram.com/a_akcio/?hl=en" },
+  { url: "https://www.instagram.com/dorian.cdt/?hl=en" },
   { url: "https://github.com/A-coderr" },
   { url: "https://www.facebook.com/profile.php?id=100011369881132" },
-  { url: "http://www.linkedin.com/in/anzhelika-kostyuk-a2b388194" },
+  { url: "https://www.linkedin.com/in/cadiot-dorian/?trk=opento_sprofile_topcard" },
 ];
 
 export const skills = [
-  "ReactJS",
-  "Three.js",
+  "C++",
+  "Java",
   "JavaScript",
   "TypeScript",
   "C#",
   "Unity",
   "Python",
-  "HTML5",
-  "CSS3",
-  "Node.js",
-  "Express.js",
+  "VScode",
+  "Oracle",
+  "SQL",
+  "Maven",
   "Git",
-  "MongoDB",
-  "Azure",
-  "Atlassian suite",
+  "IntelliJ",
+  "OCaml",
+  "Prolog",
   "MySQL",
-  "Scrum",
-  "Agile",
-  "3D",
+  "Gitlab",
+  "Structures de données",
+  "2D",
   "GitHub",
-  "Web Development",
-  "React Three Fiber",
-  "Redux",
-  "TailwindCSS",
-  "Object-Oriented Programming",
-  "Test-Driven Development",
-  "Responsive Design",
-  "Data Structures",
-  "Algorithms",
-  "User Experience",
-  "Version Control",
+  "Analyseurs syntaxiques",
+  "Programmation orientée objet",
+  "Programmation Fonctionnelle",
+  "Algorithmes",
 ];
