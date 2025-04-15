@@ -55,18 +55,15 @@ Word.propTypes = {
 const WordSphere = () => {
   const radius = 5;
   
-  // Protection renforcée
-  if (!skills || typeof skills !== 'object' || !Array.isArray(skills)) {
-    console.error("Skills doit être un tableau. Reçu:", typeof skills, skills);
-    return null;
-  }
-
-  // Conversion forcée au cas où
-  const safeSkills = Array.isArray(skills) ? skills : Object.values(skills);
-  
-  const wordPositions = safeSkills.map((skill, i) => {
-    const phi = Math.acos(-1 + (2 * i) / safeSkills.length);
-    const theta = Math.sqrt(safeSkills.length * Math.PI) * phi;
+  // Nouvel algorithme adaptatif
+  const wordPositions = skills.map((skill, i) => {
+    // Nombre minimal d'items pour une répartition stable
+    const minItems = 3; 
+    const itemCount = Math.max(minItems, skills.length);
+    
+    // Calcul robuste même avec peu d'éléments
+    const phi = Math.acos(-1 + (2 * (i + 0.5) / itemCount);
+    const theta = Math.sqrt(itemCount * Math.PI) * phi;
     
     return {
       position: new THREE.Vector3(
@@ -74,7 +71,7 @@ const WordSphere = () => {
         radius * Math.sin(phi) * Math.sin(theta),
         radius * Math.cos(phi)
       ),
-      skill: String(skill) // Force la conversion en string
+      skill
     };
   });
 
