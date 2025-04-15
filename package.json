@@ -3,6 +3,7 @@
   "private": true,
   "version": "1.1.7",
   "type": "module",
+  "homepage": "https://doriancadiot.github.io/portfolio-alternance",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
