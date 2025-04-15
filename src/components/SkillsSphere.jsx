@@ -47,11 +47,11 @@ Word.propTypes = {
 
 
 const WordSphere = () => {
-  const radius = 7;
+  const radius = 5;
   const groupRef = useRef();
 
   useFrame(() => {
-    groupRef.current.rotation.y += 0.005;
+    
   });
 
   return (
