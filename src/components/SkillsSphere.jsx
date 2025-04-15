@@ -53,34 +53,30 @@ Word.propTypes = {
 };
 
 const WordSphere = () => {
-  const radius = 8; // Augmenté pour mieux voir les éléments
-  
-  const wordPositions = skills.map((skill, i) => {
-    // Version totalement sécurisée
-    const itemCount = Math.max(3, skills.length); // Minimum 3 pour une bonne répartition
-    const phi = Math.acos(-1 + (2 * i + 1) / itemCount); // Formule corrigée
-    const theta = Math.sqrt(itemCount * Math.PI) * phi;
-    
-    // Validation des valeurs
-    const x = radius * Math.sin(phi) * Math.cos(theta);
-    const y = radius * Math.sin(phi) * Math.sin(theta);
-    const z = radius * Math.cos(phi);
+  const radius = 6;
+  const validSkills = skills.filter(skill => typeof skill === 'string' && skill.trim().length > 0);
 
+  const wordPositions = validSkills.map((skill, i) => {
+    // Algorithme optimisé pour tous types de données
+    const points = validSkills.length;
+    const angle = (i * 2 * Math.PI) / points;
+    const spiral = i / points;
+    
     return {
       position: new THREE.Vector3(
-        isNaN(x) ? 0 : x, // Fallback si NaN
-        isNaN(y) ? 0 : y,
-        isNaN(z) ? 0 : z
+        radius * Math.cos(angle) * spiral,
+        radius * Math.sin(angle) * spiral,
+        radius * (1 - 2 * spiral)
       ),
       skill
     };
   });
 
   return (
-    <group>
-      {wordPositions.map(({ skill, position }, index) => (
+    <group position={[0, 0, 0]}>
+      {wordPositions.map(({skill, position}, i) => (
         <Word 
-          key={`${skill}-${index}`}
+          key={`${skill.replace(/\s+/g, '_')}_${i}`}
           position={position}
         >
           {skill}
