@@ -46,46 +46,32 @@ Word.propTypes = {
 };
 
 
-const WordSphere = () => {
-  const radius = 4;
+const WordSphere = ({ skills }) => {
+  const radius = 3.5; // Taille réduite pour meilleure densité
   const groupRef = useRef();
-  
   const textRefs = useRef([]);
 
+  // Alignement texte avec caméra
   useFrame(({ camera }) => {
-  textRefs.current.forEach(text => {
-    if (text) {
-      text.quaternion.copy(camera.quaternion);  // Aligne chaque texte avec la caméra
-    }
+    textRefs.current.forEach(text => {
+      if (text) text.quaternion.copy(camera.quaternion);
+    });
   });
-});
+
+  // Fonction de répartition optimale
+  const getSpherePosition = (index, total) => {
+    const goldenRatio = (1 + Math.sqrt(5)) / 2;
+    const theta = 2 * Math.PI * index / goldenRatio;
+    const phi = Math.acos(1 - 2 * (index + 0.5) / total);
+    
+    return [
+      radius * Math.cos(theta) * Math.sin(phi),
+      radius * Math.sin(theta) * Math.sin(phi),
+      radius * Math.cos(phi)
+    ];
+  };
 
   return (
-    <group ref={groupRef}>
-      {skills.map((skill, i) => {
-        // Formule corrigée pour une vraie sphère
-        //const u = Math.random(); // Aléatoire pour éviter les alignements
-        //const theta = 2 * Math.PI * (i / skills.length);
-        //const phi = Math.acos(2 * u - 1);
-        
-        //const x = radius * Math.sin(phi) * Math.cos(theta);
-        //const y = radius * Math.sin(phi) * Math.sin(theta);
-        //const z = radius * Math.cos(phi);
-
-      // Fonction de répartition optimale
-      const getSpherePosition = (index, total) => {
-        const goldenRatio = (1 + Math.sqrt(5)) / 2;
-        const theta = 2 * Math.PI * index / goldenRatio;
-        const phi = Math.acos(1 - 2 * (index + 0.5) / total);
-    
-        return [
-          radius * Math.cos(theta) * Math.sin(phi),
-          radius * Math.sin(theta) * Math.sin(phi),
-          radius * Math.cos(phi)
-        ];
-      };
-
-        return (
     <group ref={groupRef}>
       {skills.map((skill, i) => {
         const position = getSpherePosition(i, skills.length);
@@ -95,10 +81,13 @@ const WordSphere = () => {
             key={`${skill}-${i}`}
             ref={el => textRefs.current[i] = el}
             position={position}
-            fontSize={0.35} // Taille réduite
+            fontSize={0.25} // Taille réduite
             color="#ffffff"
             anchorX="center"
             anchorY="middle"
+            lineHeight={1}
+            letterSpacing={0.02}
+            maxWidth={2}
           >
             {skill}
           </Text>
@@ -106,7 +95,7 @@ const WordSphere = () => {
       })}
     </group>
   );
-})};
+};
 
 const SkillsSphere = () => {
   const [size, setSize] = useState(window.innerWidth);
