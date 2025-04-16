@@ -68,7 +68,7 @@ const Navbar = () => {
           <div className="flex justify-between items-center py-5">
             <a href="#home" className="flex items-center">
               <img
-                src="logo.png"
+                src="Logo.png"
                 alt="Logo"
                 className="w-20 h-10 hover:scale-105 transition-transform"
               />
