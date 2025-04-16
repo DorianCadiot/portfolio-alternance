@@ -111,7 +111,7 @@ const Contact = () => {
                 required
                 rows={5}
                 className="py-3 px-4 bg-[#46454d] rounded-lg resize-none"
-                placeholder="Share your thoughts..."
+                placeholder="Partagez vos pensées..."
               />
             </label>
 
@@ -121,7 +121,7 @@ const Contact = () => {
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.2, ease: "easeOut" }}
             >
-              {loading ? "Sending..." : "Envoyer"}
+              {loading ? "Envoi..." : "Envoyer"}
             </motion.button>
           </form>
         </div>
