@@ -40,6 +40,16 @@ const ProjectCard = ({ project }) => {
 
       {/* Tags & Demo Link */}
       <div className="flex flex-col items-start justify-between flex-wrap gap-5">
+        <div className="flex flex-wrap items-center gap-3 w-full overflow-hidden">
+          {project.tags.map((tag, index) => (
+            <div
+              key={index}
+              className="w-8 h-8 sm:w-10 sm:h-10 rounded-md p-2 bg-neutral-100 bg-opacity-10 backdrop-filter backdrop-blur-lg flex justify-center items-center"
+            >
+              <img src={tag.path} alt={tag.name} className="w-6 sm:w-8" />
+            </div>
+          ))}
+        </div>
         <motion.a
           className="flex items-center gap-2 cursor-pointer text-white-600"
           href={project.href}
