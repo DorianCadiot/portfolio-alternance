@@ -201,8 +201,6 @@ export const workExperiences = [
 
 export const socialLinks = [
   { url: "https://www.instagram.com/dorian.cdt/?hl=en" },
-  { url: "https://github.com/A-coderr" },
-  { url: "https://www.facebook.com/profile.php?id=100011369881132" },
   { url: "https://www.linkedin.com/in/cadiot-dorian/?trk=opento_sprofile_topcard" },
 ];
 
