@@ -58,8 +58,8 @@ export const myProjects = [
       },
       {
         id: 5,
-        name: "Three.js",
-        path: "icons/threejs.svg",
+        name: "VScode",
+        path: "icons/visual-studio-code-1.svg",
       },
     ],
   },
