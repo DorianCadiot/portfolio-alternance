@@ -1,9 +1,7 @@
 import { LinearGradient } from "react-text-gradients";
 import { SocialIcon } from "react-social-icons/component";
 import "react-social-icons/instagram";
-import "react-social-icons/github";
 import "react-social-icons/linkedin";
-import "react-social-icons/facebook";
 import MouseScroll from "../components/MouseScroll";
 import { socialLinks } from "../constants/data";
 import { motion } from "framer-motion";
