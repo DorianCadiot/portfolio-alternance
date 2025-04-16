@@ -40,10 +40,8 @@ const Footer = () => {
           {/* Right Section - Social Icons */}
           <div className="flex gap-4 mt-4 sm:mt-0">
             {[
-              "https://github.com/A-coderr",
               "https://www.linkedin.com/in/cadiot-dorian/?trk=opento_sprofile_topcard",
               "https://www.instagram.com/dorian.cdt/?hl=en",
-              "https://www.facebook.com/profile.php?id=100011369881132",
             ].map((url, index) => (
               <motion.div
                 key={index}
