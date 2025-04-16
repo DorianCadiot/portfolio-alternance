@@ -16,7 +16,7 @@ const Skills = () => {
               viewport={{ once: true }}
             >
               <LinearGradient gradient={["to left", "#ff9720 ,#fc0865"]}>
-                Skills
+                Compétences
               </LinearGradient>
             </motion.p>
           </div>
