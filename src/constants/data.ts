@@ -5,11 +5,6 @@ export const navLinks = [
     href: "#home",
   },
   {
-    id: 2,
-    name: "Expérience",
-    href: "#experience",
-  },
-  {
     id: 3,
     name: "Compétences",
     href: "#skills",
