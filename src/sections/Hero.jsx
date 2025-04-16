@@ -39,12 +39,14 @@ const Hero = () => {
 before:absolute before:inset-0 before:animate-typewriter before:bg-[#1a191e]
 after:absolute after:inset-0 after:w-[0.125em] after:animate-caret after:bg-white"
           >
-            Game developer
+            Étudiant en MSc Développeur de jeu vidéo, rendu 3D temps réel et technologies immersives, au Gaming Campus à Lyon
           </p>
 
           <p className="max-w-4xl text-center justify-center text-white xl:text-xl md:text-lg sm:text-sm text-md">
-          Actuellement en transition vers un MSc Développeur de jeu vidéo, rendu 3D temps réel et technologies immersives, je suis à la recherche d’une alternance au sein d’un studio de jeu vidéo.
-          Passionné par la création d’univers interactifs, je souhaite mettre mes compétences en programmation au service de projets ambitieux et immersifs. Mon objectif : devenir un développeur capable de donner vie à des expériences de jeu uniques et innovantes.
+         Étudiant en MSc Développeur de jeu vidéo, rendu 3D temps réel et technologies immersives à Gaming Campus Lyon,
+         je recherche une alternance pour la rentrée 2025 afin de consolider mes compétences en développement au sein
+         d’une équipe créative. Curieux, motivé et passionné par l’univers vidéoludique, je souhaite contribuer à des projets
+         concrets tout en évoluant dans un environnement professionnel stimulant et innovant.
           </p>
         </div>
         <motion.div
