@@ -65,7 +65,7 @@ const Contact = () => {
             viewport={{ once: true }}
           >
             <LinearGradient gradient={["to left", "#ff9720 ,#fc0865"]}>
-              Get in touch
+              Contact
             </LinearGradient>
           </motion.p>
         </div>
