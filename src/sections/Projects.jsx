@@ -16,7 +16,7 @@ const Projects = () => {
             viewport={{ once: true }} // Ensures it only animates once per scroll
           >
             <LinearGradient gradient={["to left", "#ff9720 ,#fc0865"]}>
-              Projects
+              Projets
             </LinearGradient>
           </motion.p>
         </div>
