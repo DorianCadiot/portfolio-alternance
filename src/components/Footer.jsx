@@ -27,13 +27,13 @@ const Footer = () => {
             transition={{ duration: 0.2, ease: "easeOut" }}
           >
             <a
-              href="resume_anzhelika_kostyuk.pdf"
+              href="CV_Dorian_CADIOT_alternance.pdf"
               download
               target="_blank"
               rel="noopener noreferrer"
               className="bg-[#ff9720] text-black px-5 py-2 text-sm font-medium rounded-md hover:bg-[#e6891f] transition-colors"
             >
-              Download Resume
+              Télecharger le CV
             </a>
           </motion.div>
 
@@ -41,8 +41,8 @@ const Footer = () => {
           <div className="flex gap-4 mt-4 sm:mt-0">
             {[
               "https://github.com/A-coderr",
-              "http://www.linkedin.com/in/anzhelika-kostyuk-a2b388194",
-              "https://www.instagram.com/a_akcio/?hl=en",
+              "https://www.linkedin.com/in/cadiot-dorian/?trk=opento_sprofile_topcard",
+              "https://www.instagram.com/dorian.cdt/?hl=en",
               "https://www.facebook.com/profile.php?id=100011369881132",
             ].map((url, index) => (
               <motion.div
@@ -63,7 +63,7 @@ const Footer = () => {
 
         {/* Copyright */}
         <div className="text-center text-xs text-neutral-400 mt-6">
-          © {new Date().getFullYear()} Anzhelika Kostyuk. All rights reserved.
+          © {new Date().getFullYear()} Dorian Cadiot. Tout droits réservés.
         </div>
       </div>
     </motion.footer>
