@@ -108,7 +108,7 @@ export const myProjects = [
       {
         id: 1,
         name: "OCaml",
-        path: "icons/ocaml.svg",
+        path: "icons/OCaml_Sticker.svg",
       },
       {
         id: 2,
