@@ -61,7 +61,7 @@ export const myProjects = [
     title: "Projet universitaire autour de la programmation orientée objet",
     desc: "Développement de A à Z d'un petit jeu basique avec interaction dans la console.",
     subdesc:
-      " Lors de ce projet à 4, nous avons choisi de développer un jeu roguelike, dans lequel le joueur avançait de salle en salle dans un donjon. Le joueur pouvait progresser dans le donjon pour obtenir des récompenses générées aléatoirement à la fin de chaque salle, lui permettant d'améliorer son équipement afin d'aller plus loin.",
+      " Lors de ce projet à 4, nous avons choisi de développer un jeu roguelike, dans lequel le joueur avançait de salle en salle dans un donjon. \n Le joueur pouvait progresser dans le donjon pour obtenir des récompenses générées aléatoirement à la fin de chaque salle, lui permettant d'améliorer son équipement afin d'aller plus loin.",
     href: "https://gitlab.univ-nantes.fr/E224021B/POO.23.24.20",
     logo: "projects/icons8-java-64.png",
     logoStyle: {
@@ -91,9 +91,9 @@ export const myProjects = [
     title: "Projet universitaire autour de la programmation fonctionnelle",
     desc: "Programmation d'un analyseur syntaxique en OCaml d'un langage \"SimpleML\", vérifiant les types des expressions et évaluant leurs valeurs.",
     subdesc:
-      "Ce projet m'as permis de mieux comprendre copmment fonctionne un analyseur syntaxique pour les différents languages.",
+      "Ce projet m'as permis de mieux comprendre comment fonctionne un analyseur syntaxique pour les différents languages.",
     href: "https://gitlab.univ-nantes.fr/E224021B/projet-programation-fonctionnelle",
-    logo: "projects/icons8-java-64.png",
+    logo: "projects/colour-logo.png",
     logoStyle: {
       backgroundColor: "#60f5a1",
       background:
