@@ -22,9 +22,9 @@ const Contact = () => {
         "template_7tsiuhi",
         {
           from_name: form.name,
-          to_name: "Anzhelika",
+          to_name: "Dorian",
           from_email: form.email,
-          to_email: "kostyukanzhelika@gmail.com",
+          to_email: "cdt.dorian15@gmail.com",
           message: form.message,
         },
         "_-60POSClBbKWHgNb"
@@ -32,7 +32,7 @@ const Contact = () => {
       .then(
         () => {
           setLoading(false);
-          alert("Thank you. I will get back to you as soon as possible");
+          alert("Merci, je vous recontacte au plus vite !");
           setForm({
             name: "",
             email: "",
@@ -42,7 +42,7 @@ const Contact = () => {
         (error) => {
           setLoading(false);
           console.log(error);
-          alert("Something went wrong!");
+          alert("Erreur!");
         }
       );
   };
@@ -77,7 +77,7 @@ const Contact = () => {
             className="flex flex-col gap-6 w-full"
           >
             <label className="flex flex-col">
-              <span className="text-white font-medium mb-2">Name</span>
+              <span className="text-white font-medium mb-2">Nom</span>
               <input
                 type="text"
                 name="name"
@@ -90,7 +90,7 @@ const Contact = () => {
             </label>
 
             <label className="flex flex-col">
-              <span className="text-white font-medium mb-2">Email address</span>
+              <span className="text-white font-medium mb-2">Email</span>
               <input
                 type="email"
                 name="email"
@@ -121,7 +121,7 @@ const Contact = () => {
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.2, ease: "easeOut" }}
             >
-              {loading ? "Sending..." : "Send"}
+              {loading ? "Sending..." : "Envoyer"}
             </motion.button>
           </form>
         </div>
