@@ -38,18 +38,18 @@ export const myProjects = [
     tags: [
       {
         id: 1,
-        name: "React.js",
-        path: "icons/react.svg",
+        name: "C#",
+        path: "icons/c-sharp.svg",
       },
       {
         id: 2,
-        name: "TailwindCSS",
-        path: "icons/tailwindcss-icon.svg",
+        name: "Unity",
+        path: "icons/unity.svg",
       },
       {
         id: 3,
-        name: "TypeScript",
-        path: "icons/typescript-icon.svg",
+        name: "WebGL",
+        path: "icons/webgl-svgrepo-com.svg",
       },
       {
         id: 4,
@@ -60,16 +60,6 @@ export const myProjects = [
         id: 5,
         name: "Three.js",
         path: "icons/threejs.svg",
-      },
-      {
-        id: 6,
-        name: "HTML",
-        path: "icons/html-5.svg",
-      },
-      {
-        id: 7,
-        name: "Redux",
-        path: "icons/redux.svg",
       },
     ],
   },
