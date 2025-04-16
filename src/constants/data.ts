@@ -52,11 +52,6 @@ export const myProjects = [
         path: "icons/webgl-svgrepo-com.svg",
       },
       {
-        id: 4,
-        name: "Java Script",
-        path: "icons/javascript.svg",
-      },
-      {
         id: 5,
         name: "VScode",
         path: "icons/visual-studio-code-1.svg",
@@ -79,38 +74,18 @@ export const myProjects = [
     tags: [
       {
         id: 1,
-        name: "React.js",
-        path: "icons/react.svg",
+        name: "java",
+        path: "icons/java-vertical.svg",
       },
       {
         id: 2,
-        name: "TailwindCSS",
-        path: "icons/tailwindcss-icon.svg",
+        name: "git",
+        path: "icons/github-icon.svg",
       },
       {
         id: 3,
-        name: "TypeScript",
-        path: "icons/typescript-icon.svg",
-      },
-      {
-        id: 4,
-        name: "Java Script",
-        path: "icons/javascript.svg",
-      },
-      {
-        id: 5,
-        name: "Three.js",
-        path: "icons/threejs.svg",
-      },
-      {
-        id: 6,
-        name: "HTML",
-        path: "icons/html-5.svg",
-      },
-      {
-        id: 7,
-        name: "CSS",
-        path: "icons/css-3.svg",
+        name: "VSCode",
+        path: "icons/visual-studio-code-1.svg",
       },
     ],
   },
@@ -132,13 +107,17 @@ export const myProjects = [
     tags: [
       {
         id: 1,
-        name: "HTML",
-        path: "icons/html-5.svg",
+        name: "OCaml",
+        path: "icons/OCaml_Sticker.svg",
       },
       {
         id: 2,
-        name: "CSS",
-        path: "icons/css-3.svg",
+        name: "VSCode",
+        path: "icons/visual-studio-code-1.svg",
+      },{
+        id: 3,
+        name: "git",
+        path: "icons/github-icon.svg",
       },
     ],
   },
