@@ -29,7 +29,7 @@ export const myProjects = [
       "Cela m'as permis d'apprendre également les bases du C#, ainsi que le fonctionnement d'un moteur de jeu.",
     href: "https://doriancadiot.github.io/Jeu-Unity/",
     source: "https://github.com/A-coderr/obstacle_course_r3f",
-    logo: "projects/ThreeRun_Main_Screen.png",
+    logo: "projects/Capture_jeu_Untiy.png",
     logoStyle: {
       backgroundColor: "#2A1816",
       border: "0.2px solid #36201D",
@@ -64,7 +64,7 @@ export const myProjects = [
     subdesc:
       " Lors de ce projet à 4, nous avons choisi de développer un jeu roguelike, dans lequel le joueur avançait de salle en salle dans un donjon. Le joueur pouvait progresser dans le donjon pour obtenir des récompenses générées aléatoirement à la fin de chaque salle, lui permettant d'améliorer son équipement afin d'aller plus loin.",
     href: "https://gitlab.univ-nantes.fr/E224021B/POO.23.24.20",
-    source: "https://github.com/A-coderr/three_portfolio",
+    source: "projects/icons8-java-64.png",
     logo: "projects/Portfolio_Main.png",
     logoStyle: {
       backgroundColor: "#13202F",
@@ -95,7 +95,7 @@ export const myProjects = [
     subdesc:
       "Ce projet m'as permis de mieux comprendre copmment fonctionne un analyseur syntaxique pour les différents languages.",
     href: "https://gitlab.univ-nantes.fr/E224021B/projet-programation-fonctionnelle",
-    source: "https://github.com/A-coderr/Karate_HTML_CSS",
+    source: "projects/colour-logo.png",
     logo: "projects/KarateGalaxy_Main.png",
     logoStyle: {
       backgroundColor: "#60f5a1",
