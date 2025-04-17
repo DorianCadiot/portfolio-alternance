@@ -12,18 +12,7 @@ const ProjectCard = ({ project }) => {
       whileInView={{ opacity: 1, y: 0 }} // Fade in & move up when in view
       viewport={{ once: true }} // Only animates once per scroll
     >
-      {/* Project Image & Social Icon */}
-      <div className="backdrop-filter backdrop-blur-3xl w-full rounded-lg relative">
-        <img src={project.logo} alt="logo" className="rounded-lg" />
-        <div className="absolute inset-0 flex justify-end m-3">
-          <motion.div
-            whileHover={{ scale: 1.1 }}
-            transition={{ duration: 0.2, ease: "easeOut" }}
-          >
-            <SocialIcon className="heroIcon" url={project.source} />
-          </motion.div>
-        </div>
-      </div>
+      
 
       {/* Project Details */}
       <div className="flex flex-col gap-5 text-white-600 my-2">
