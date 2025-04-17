@@ -16,7 +16,7 @@ const CursorGlow = () => {
     <div
       className="fixed top-0 left-0 w-full h-full pointer-events-none z-50 transition-all duration-500 ease-out"
       style={{
-        background: `radial-gradient(circle 200px at ${position.x}px ${position.y}px, rgba(32, 190, 14, 0.25 ), transparent 60%)`,
+        background: `radial-gradient(circle 200px at ${position.x}px ${position.y}px, rgba(32, 190, 14, 0.20 ), transparent 60%)`,
         mixBlendMode: "overlay",
         transition: "background 0.3s ease-out, transform 0.1s ease-out",
       }}
