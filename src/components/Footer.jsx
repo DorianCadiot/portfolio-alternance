@@ -58,12 +58,7 @@ const Footer = () => {
             ))}
           </div>
         </div>
-
-        {/* Copyright */}
-        <div className="text-center text-xs text-neutral-400 mt-6">
-          © {new Date().getFullYear()} Dorian Cadiot. Tout droits réservés.
-        </div>
-      </div>
+        
     </motion.footer>
   );
 };
