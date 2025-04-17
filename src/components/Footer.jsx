@@ -58,7 +58,7 @@ const Footer = () => {
             ))}
           </div>
         </div>
-        
+      </div>
     </motion.footer>
   );
 };
