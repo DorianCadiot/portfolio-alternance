@@ -20,7 +20,7 @@ const Word = ({ children, position }) => {
   });
 
   const { color, scale } = useSpring({
-    color: hovered ? "#fc0865" : "white",
+    color: hovered ? "#09c800ff" : "white",
     scale: hovered ? 1.1 : 1, // Slight scaling effect on hover
     config: { tension: 200, friction: 20 }, // Smooth transition settings
   });
@@ -46,56 +46,6 @@ Word.propTypes = {
 };
 
 
-/*const WordSphere = () => {
-  const radius = 5; // Taille réduite pour meilleure densité
-  const groupRef = useRef();
-  const textRefs = useRef([]);
-
-  // Alignement texte avec caméra
-  useFrame(({ camera }) => {
-    textRefs.current.forEach(text => {
-      if (text) text.quaternion.copy(camera.quaternion);
-    });
-  });
-
-  // Fonction de répartition optimale
-  const getSpherePosition = (index, total) => {
-    const goldenRatio = (1 + Math.sqrt(5)) / 2;
-    const theta = 2 * Math.PI * index / goldenRatio;
-    const phi = Math.acos(1 - 2 * (index + 0.5) / total);
-    
-    return [
-      radius * Math.cos(theta) * Math.sin(phi),
-      radius * Math.sin(theta) * Math.sin(phi),
-      radius * Math.cos(phi)
-    ];
-  };
-
-  return (
-    <group ref={groupRef}>
-      {skills.map((skill, i) => {
-        const position = getSpherePosition(i, skills.length);
-
-        return (
-          <Text
-            key={`${skill}-${i}`}
-            ref={el => textRefs.current[i] = el}
-            position={position}
-            fontSize={0.55} // Taille réduite
-            color="#ffffff"
-            anchorX="center"
-            anchorY="middle"
-            lineHeight={1}
-            letterSpacing={0.02}
-            maxWidth={50}
-          >
-            {skill}
-          </Text>
-        );
-      })}
-    </group>
-  );
-};*/
 
 const WordSphere = () => {
   const radius = 5;
