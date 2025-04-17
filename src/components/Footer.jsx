@@ -31,7 +31,7 @@ const Footer = () => {
               download
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#00bdd9ff] text-black px-5 py-2 text-sm font-medium rounded-md hover:bg-[#e6891f] transition-colors"
+              className="bg-[#00bdd9ff] text-black px-5 py-2 text-sm font-medium rounded-md hover:bg-[#00bdd9ff] transition-colors"
             >
               Télecharger le CV
             </a>
