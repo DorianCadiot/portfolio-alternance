@@ -120,9 +120,9 @@ export const myProjects = [
   },
    {
     title: "Création de mon portfolio",
-    desc: "Développement de mon portfolio via github pages et ReactJS ",
+    desc: "Développement de mon portfolio via github pages et ReactJS. ",
     subdesc:
-      "Cela m'as permis de découvrir github pages, ReactJS ainsi que WebGL afin d'insérer mes projets",
+      "Cela m'as permis de découvrir github pages, ReactJS ainsi que WebGL afin d'insérer mes projets.",
     href: "https://github.com/DorianCadiot/portfolio-alternance",
     logo: "projects/Capture_jeu_Untiy.png",
     logoStyle: {
