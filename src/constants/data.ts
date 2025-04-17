@@ -51,7 +51,7 @@ export const myProjects = [
         path: "icons/webgl-svgrepo-com.svg",
       },
       {
-        id: 5,
+        id: 4,
         name: "VScode",
         path: "icons/visual-studio-code-1.svg",
       },
@@ -115,6 +115,41 @@ export const myProjects = [
         id: 3,
         name: "git",
         path: "icons/github-icon.svg",
+      },
+    ],
+  },
+   {
+    title: "Création de mon portfolio",
+    desc: "Développement de mon portfolio via github pages et ReactJS ",
+    subdesc:
+      "Cela m'as permis de découvrir github pages, ReactJS ainsi que WebGL afin d'insérer mes projets",
+    href: "https://github.com/DorianCadiot/portfolio-alternance",
+    logo: "projects/Capture_jeu_Untiy.png",
+    logoStyle: {
+      backgroundColor: "#2A1816",
+      border: "0.2px solid #36201D",
+      boxShadow: "0px 0px 60px 0px #AA3C304D",
+    },
+    tags: [
+      {
+        id: 1,
+        name: "React",
+        path: "icons/react.svg",
+      },
+      {
+        id: 2,
+        name: "Github",
+        path: "icons/github-icon.svg",
+      },
+      {
+        id: 3,
+        name: "WebGL",
+        path: "icons/webgl-svgrepo-com.svg",
+      },
+      {
+        id: 4,
+        name: "JavaScript",
+        path: "icons/javascript.svg",
       },
     ],
   },
