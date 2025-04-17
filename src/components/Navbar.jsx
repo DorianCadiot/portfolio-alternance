@@ -57,14 +57,21 @@ const Navbar = () => {
   };
   return (
     <>
-      <header
+      {/*<header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-[#00bdd9ff] ${
           isScrolled || isOpen
             ? "bg-[#1a191e] border-b-2 border-[#00bdd9ff] border-opacity-100 shadow-md"
             : "bg-transparent border-b-0"
             //: "bg-transparent border-b-2 border-[#00bdd9ff] border-opacity-0"
         }`}
-      >
+      >*/}
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          isScrolled || isOpen
+            ? "bg-[#1a191e] border-b-2 border-[#00bdd9] border-opacity-100 shadow-md"
+            : "bg-transparent border-b-2 border-[#00bdd9] border-opacity-0"
+        }`}
+        >
         <div className="mx-auto px-6 sm:px-8 md:px-10">
           <div className="flex justify-between items-center py-5">
             <a href="#home" className="flex items-center">
