@@ -28,7 +28,7 @@ const Hero = () => {
         <div className="max-w-7xl mx-auto flex flex-col c-space gap-7 items-center">
           <p className="md:text-5xl sm:text-4xl text-2xl font-medium text-white text-center">
             Bonjour, je suis{" "}
-            <LinearGradient gradient={["to left", "#09c800ff ,#00bdd9ff"]}>
+            <LinearGradient gradient={["to left", "#00bdd9ff ,#09c800ff"]}>
               Dorian
             </LinearGradient>
           </p>
