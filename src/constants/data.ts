@@ -63,7 +63,7 @@ export const myProjects = [
     subdesc:
       " Lors de ce projet à 4, nous avons choisi de développer un jeu roguelike, dans lequel le joueur avançait de salle en salle dans un donjon. \n Le joueur pouvait progresser dans le donjon pour obtenir des récompenses générées aléatoirement à la fin de chaque salle, lui permettant d'améliorer son équipement afin d'aller plus loin.",
     href: "https://gitlab.univ-nantes.fr/E224021B/POO.23.24.20",
-    logo: "projects/4373217_java_logo_logos_icon (1).png",
+    logo: "projects/java_logo.png",
     logoStyle: {
       backgroundColor: "#13202F",
       border: "0.2px solid #17293E",
