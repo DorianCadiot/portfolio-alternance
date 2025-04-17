@@ -60,8 +60,8 @@ const Navbar = () => {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled || isOpen
-            ? "bg-[#1a191e] border-b-2 border-[#ff9720] border-opacity-100 shadow-md"
-            : "bg-transparent border-b-2 border-[#ff9720] border-opacity-0"
+            ? "bg-[#1a191e] border-b-2 border-[#00bdd9ff] border-opacity-100 shadow-md"
+            : "bg-transparent border-b-2 border-[#00bdd9ff] border-opacity-0"
         }`}
       >
         <div className="mx-auto px-6 sm:px-8 md:px-10">
@@ -76,7 +76,7 @@ const Navbar = () => {
 
             <button
               onClick={toggleMenu}
-              className="text-white hover:text-[#ff9720] focus:outline-none sm:hidden flex"
+              className="text-white hover:text-[#09c800ff] focus:outline-none sm:hidden flex"
               aria-label="Open Menu"
             >
               {isOpen ? (
