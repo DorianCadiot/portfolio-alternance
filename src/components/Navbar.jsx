@@ -58,7 +58,7 @@ const Navbar = () => {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-[#00bdd9ff] ${
           isScrolled || isOpen
             ? "bg-[#1a191e] border-b-2 border-[#00bdd9ff] border-opacity-100 shadow-md"
             : "bg-transparent border-b-0"
