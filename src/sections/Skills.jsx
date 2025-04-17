@@ -15,7 +15,7 @@ const Skills = () => {
               transition={{ duration: 0.6, ease: "easeOut" }}
               viewport={{ once: true }}
             >
-              <LinearGradient gradient={["to left", "#ff9720 ,#fc0865"]}>
+              <LinearGradient gradient={["to left", "#00bdd9ff ,#09c800ff"]}>
                 Compétences
               </LinearGradient>
             </motion.p>
