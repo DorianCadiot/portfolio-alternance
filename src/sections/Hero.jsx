@@ -37,7 +37,7 @@ const Hero = () => {
 before:absolute before:inset-0 before:animate-typewriter before:bg-[#1a191e]
 after:absolute after:inset-0 after:w-[0.125em] after:animate-caret after:bg-white"
           >
-            Étudiant en Master
+            En recherche d'alternance
           </p>
 
           <p className="max-w-4xl text-center justify-center text-white xl:text-xl md:text-lg sm:text-sm text-md">
