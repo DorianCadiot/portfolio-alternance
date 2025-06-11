@@ -27,7 +27,7 @@ const Footer = () => {
             transition={{ duration: 0.2, ease: "easeOut" }}
           >
             <a
-              href="CV_Dorian_CADIOT_alternance.pdf"
+              href="CV_Dorian_CADIOT_bis.pdf"
               download
               target="_blank"
               rel="noopener noreferrer"
