@@ -24,6 +24,11 @@ const Skills = () => {
             <SkillsSphere />
           </div>
         </div>
+        <div className="arrow-container">
+          <span className="arrow">&#8634;</span>
+          <span className="arrow">&#8635;</span>
+        </div>
+
       </section>
     </>
   );
