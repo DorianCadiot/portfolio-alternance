@@ -25,43 +25,43 @@ const Skills = () => {
             <SkillsSphere />
           </div>
 
-          {/* Flèche incurvée double sens en SVG */}
-          <div className="mt-6">
+          {/* Flèche incurvée double sens plus esthétique */}
+          <div className="mt-8">
             <svg
+              viewBox="0 0 200 80"
               width="100"
-              height="60"
-              viewBox="0 0 100 60"
-              xmlns="http://www.w3.org/2000/svg"
-              className="mx-auto animate-bounce"
+              height="40"
+              className="mx-auto animate-pulse"
             >
               <path
-                d="M10 10 C10 50, 90 50, 90 10"
-                stroke="#00bdd9"
-                strokeWidth="6"
+                d="M20,60 C60,10 140,10 180,60"
                 fill="none"
-                markerStart="url(#arrowStart)"
-                markerEnd="url(#arrowEnd)"
+                stroke="#00bdd9"
+                strokeWidth="4"
+                strokeLinecap="round"
+                markerStart="url(#arrowLeft)"
+                markerEnd="url(#arrowRight)"
               />
               <defs>
                 <marker
-                  id="arrowStart"
+                  id="arrowLeft"
                   markerWidth="10"
                   markerHeight="10"
                   refX="5"
                   refY="5"
                   orient="auto"
                 >
-                  <path d="M0,5 L10,0 L8,5 L10,10 Z" fill="#00bdd9" />
+                  <path d="M10,0 L0,5 L10,10 Z" fill="#00bdd9" />
                 </marker>
                 <marker
-                  id="arrowEnd"
+                  id="arrowRight"
                   markerWidth="10"
                   markerHeight="10"
-                  refX="5"
+                  refX="0"
                   refY="5"
                   orient="auto"
                 >
-                  <path d="M0,5 L10,0 L8,5 L10,10 Z" fill="#00bdd9" />
+                  <path d="M0,0 L10,5 L0,10 Z" fill="#00bdd9" />
                 </marker>
               </defs>
             </svg>
