@@ -25,10 +25,46 @@ const Skills = () => {
             <SkillsSphere />
           </div>
 
-          {/* Flèche incurvée double sens animée */}
-          <div className="mt-6 animate-bounce flex items-center justify-center text-3xl text-[#00bdd9]">
-            <span className="mx-2 rotate-[30deg]">↶</span>
-            <span className="mx-2 -rotate-[30deg]">↷</span>
+          {/* Flèche incurvée double sens en SVG */}
+          <div className="mt-6">
+            <svg
+              width="100"
+              height="60"
+              viewBox="0 0 100 60"
+              xmlns="http://www.w3.org/2000/svg"
+              className="mx-auto animate-bounce"
+            >
+              <path
+                d="M10 10 C10 50, 90 50, 90 10"
+                stroke="#00bdd9"
+                strokeWidth="6"
+                fill="none"
+                markerStart="url(#arrowStart)"
+                markerEnd="url(#arrowEnd)"
+              />
+              <defs>
+                <marker
+                  id="arrowStart"
+                  markerWidth="10"
+                  markerHeight="10"
+                  refX="5"
+                  refY="5"
+                  orient="auto"
+                >
+                  <path d="M0,5 L10,0 L8,5 L10,10 Z" fill="#00bdd9" />
+                </marker>
+                <marker
+                  id="arrowEnd"
+                  markerWidth="10"
+                  markerHeight="10"
+                  refX="5"
+                  refY="5"
+                  orient="auto"
+                >
+                  <path d="M0,5 L10,0 L8,5 L10,10 Z" fill="#00bdd9" />
+                </marker>
+              </defs>
+            </svg>
           </div>
         </div>
       </section>
