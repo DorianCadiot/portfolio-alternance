@@ -20,15 +20,17 @@ const Skills = () => {
               </LinearGradient>
             </motion.p>
           </div>
+
           <div className="flex w-full justify-center">
             <SkillsSphere />
           </div>
-        </div>
-        <div className="arrow-container">
-          <span className="arrow">&#8634;</span>
-          <span className="arrow">&#8635;</span>
-        </div>
 
+          {/* Flèche incurvée double sens animée */}
+          <div className="mt-6 animate-bounce flex items-center justify-center text-3xl text-[#00bdd9]">
+            <span className="mx-2 rotate-[30deg]">↶</span>
+            <span className="mx-2 -rotate-[30deg]">↷</span>
+          </div>
+        </div>
       </section>
     </>
   );
