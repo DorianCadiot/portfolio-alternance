@@ -26,46 +26,10 @@ const Skills = () => {
           </div>
 
           {/* Flèche incurvée double sens plus esthétique */}
-          <div className="mt-8">
-            <svg
-              viewBox="0 0 200 80"
-              width="100"
-              height="40"
-              className="mx-auto animate-pulse"
-            >
-              <path
-                d="M20,60 C60,10 140,10 180,60"
-                fill="none"
-                stroke="#00bdd9"
-                strokeWidth="4"
-                strokeLinecap="round"
-                markerStart="url(#arrowLeft)"
-                markerEnd="url(#arrowRight)"
-              />
-              <defs>
-                <marker
-                  id="arrowLeft"
-                  markerWidth="10"
-                  markerHeight="10"
-                  refX="5"
-                  refY="5"
-                  orient="auto"
-                >
-                  <path d="M10,0 L0,5 L10,10 Z" fill="#00bdd9" />
-                </marker>
-                <marker
-                  id="arrowRight"
-                  markerWidth="10"
-                  markerHeight="10"
-                  refX="0"
-                  refY="5"
-                  orient="auto"
-                >
-                  <path d="M0,0 L10,5 L0,10 Z" fill="#00bdd9" />
-                </marker>
-              </defs>
-            </svg>
-          </div>
+          <div className="mt-6 text-3xl text-[#00bdd9] animate-bounce select-none">
+  ↔
+</div>
+
         </div>
       </section>
     </>
