@@ -26,7 +26,7 @@ export const myProjects = [
     title: "Développement d'un plateformer 2D via Unity",
     desc: "Projet personnel en binôme avec un autre étudiant informatique, découverte de Unity via une super série tuto, sur Youtube.",
     subdesc:
-      "Cela m'as permis d'apprendre également les bases du C#, ainsi que le fonctionnement d'un moteur de jeu.",
+      "Cela m'a permis d'apprendre également les bases du C#, ainsi que le fonctionnement d'un moteur de jeu.",
     href: "https://doriancadiot.github.io/Jeu-Unity/",
     logo: "projects/Capture_jeu_Untiy.png",
     logoStyle: {
@@ -59,7 +59,7 @@ export const myProjects = [
   },
   {
     title: "Projet universitaire autour de la programmation orientée objet",
-    desc: "Développement de A à Z d'un petit jeu basique avec interaction dans la console.",
+    desc: "Développement de A à Z d'un prototype de jeu avec interaction dans la console.",
     subdesc:
       " Lors de ce projet à 4, nous avons choisi de développer un jeu roguelike, dans lequel le joueur avançait de salle en salle dans un donjon. \n Le joueur pouvait progresser dans le donjon pour obtenir des récompenses générées aléatoirement à la fin de chaque salle, lui permettant d'améliorer son équipement afin d'aller plus loin.",
     href: "https://gitlab.univ-nantes.fr/E224021B/POO.23.24.20",
