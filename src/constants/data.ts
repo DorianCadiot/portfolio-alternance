@@ -23,8 +23,8 @@ export const navLinks = [
 
 export const myProjects = [
   {
-    title: "Développement d'un plateformer 2D via Unity",
-    desc: "Projet personnel en binôme avec un autre étudiant informatique, découverte de Unity via une super série tuto, sur Youtube.",
+    title: "Développement d'un platformer 2D via Unity",
+    desc: "Projet personnel en duo avec un autre étudiant informatique, découverte de Unity via une super série tuto, sur Youtube.",
     subdesc:
       "Cela m'a permis d'apprendre également les bases du C#, ainsi que le fonctionnement d'un moteur de jeu.",
     href: "https://doriancadiot.github.io/Jeu-Unity/",
