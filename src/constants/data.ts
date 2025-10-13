@@ -137,8 +137,8 @@ export const myProjects = [
       },
       {
         id: 2,
-        name: "Github",
-        path: "icons/github-icon.svg",
+        name: "C++",
+        path: "icons/ISO_C++_Logo.png",
       },
     ],
   },
