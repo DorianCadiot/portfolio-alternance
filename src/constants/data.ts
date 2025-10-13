@@ -118,7 +118,31 @@ export const myProjects = [
       },
     ],
   },
-   {
+  {
+    title: "Développement d’un Shoot’em Up",
+    desc: "Création complète du moteur et du gameplay à partir de zéro",
+    subdesc: "Ce projet d’une semaine m’a permis de comprendre la structure d’un moteur de jeu et l’importance de sa séparation logique avec le gameplay dans le code.",
+    href: "https://github.com/DorianCadiot/Remise_a_niveau",
+    logo: "projects/ShootemUp.png",
+    logoStyle: {
+      backgroundColor: "#2A1816",
+      border: "0.2px solid #36201D",
+      boxShadow: "0px 0px 60px 0px #AA3C304D",
+    },
+    tags: [
+      {
+        id: 1,
+        name: "VSCode",
+        path: "icons/visual-studio-code-1.svg",
+      },
+      {
+        id: 2,
+        name: "Github",
+        path: "icons/github-icon.svg",
+      },
+    ],
+  },
+  {
     title: "Création de mon portfolio",
     desc: "Développement de mon portfolio via github pages et ReactJS. ",
     subdesc:
